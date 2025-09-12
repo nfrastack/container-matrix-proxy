@@ -1,6 +1,6 @@
 services:
   matrix-proxy-app:
-    image: tiredofit/matrix-proxy:latest
+    image: docker.ionfrastack/matrix-proxy:latest
     container_name: matrix-proxy-app
     labels:
       - traefik.enable=true
@@ -10,7 +10,6 @@ services:
       - ./logs:/logs
     environment:
       - TIMEZONE=America/Vancouver
-      - CONTAINER_NAME=matrix-proxy-app
 
       - HOMESERVER_TYPE=synapse
       - HOMESERVER_URL=http://synapse:8008

@@ -1,10 +1,13 @@
 #!/command/with-contenv bash
+# SPDX-FileCopyrightText: © 2025 Nfrastack <code@nfrastack.com>
+#
+# SPDX-License-Identifier: MIT
 
-source /assets/functions/00-container
+source /container/base/functions/container/init
 prepare_service
 PROCESS_NAME="matrix-proxy"
 
-if [ ! -f "/tmp/.container/container-restart" ] ; then
+if [ ! -f "/container/state/restart" ] ; then
     sanity_var HOMESERVER_URL "URL to your Matrix Homeserver"
     update_template /etc/nginx/sites.available/matrix-proxy.conf    \
                                                                         HOMESERVER_URL
