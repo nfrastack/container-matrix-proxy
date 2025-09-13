@@ -30,6 +30,7 @@ ENV NGINX_SITE_ENABLED=matrix-proxy \
 
 RUN source /container/base/functions/container/build && \
     container_build_log image && \
+    sed -i "s|{{NGINX_CLIENT_BODY_BUFFER_SIZE}}|32k|g" /etc/nginx/nginx.conf && \
     package update && \
     package upgrade && \
     package cleanup
