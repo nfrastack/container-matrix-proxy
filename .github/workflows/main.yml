@@ -9,16 +9,8 @@ on:
       - '!README.md'
       - '!/zabbix_templates/*'
 jobs:
-<<<<<<< HEAD
-  build:
-    #uses: tiredofit/github_actions/.github/workflows/default_amd64.yml@main
-    #uses: tiredofit/github_actions/.github/workflows/default_amd64.yml@main
-    #uses: tiredofit/github_actions/.github/workflows/default_amd64_armv7_arm64.yml@main
-    uses: tiredofit/github_actions/.github/workflows/default_amd64_arm64.yml@main
-=======
   prepare:
     uses: nfrastack/gha/.github/workflows/artifacts-encrypt.yml@main
->>>>>>> c89b768 (1.2.0pre)
     secrets: inherit
   build:
     needs: prepare
