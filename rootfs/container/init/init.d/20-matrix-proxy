@@ -35,6 +35,14 @@ if [ ! -f "/container/state/restart" ] ; then
         ;;
     esac
 
+    if var_true "${ENABLE_PROXY_MAS}" ; then
+        print_notice "Enabling Proxy to Matrix Authentication Service"
+        sed -i "s|#include /etc/nginx/includes.d/mas.conf;|include /etc/nginx/includes.d/mas.conf;|g" /etc/nginx/sites.available/matrix-proxy.conf
+        sanity_var MAS_URL "URL to your Media Repository"
+        update_template /etc/nginx/includes.d/mas.conf \
+                                                        MAS_URL
+    fi
+
     if var_true "${ENABLE_PROXY_MEDIA_REPO}" ; then
         print_notice "Enabling Proxy to media repository"
         sed -i "s|#include /etc/nginx/includes.d/media-repo.conf;|include /etc/nginx/includes.d/media-repo.conf;|g" /etc/nginx/sites.available/matrix-proxy.conf

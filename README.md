@@ -115,6 +115,13 @@ Below is the complete list of available options that can be used to customize yo
 | `ENABLE_SYNAPSE_ADMIN`      | Create proxy to Synapse Administration API                          | `FALSE`     |
 | `SYNAPSE_ADMIN_ALLOWED_IPS` | IP/Networks allowed to access Synapse Admin API seperated by commas | `0.0.0.0/0` |
 
+#### Matrix Authentication Service Proxy Options
+
+| Variable           | Value                                                                     | Default |
+| ------------------ | ------------------------------------------------------------------------- | ------- |
+| `ENABLE_PROXY_MAS` | Create proxy to Matrix Authentication Servicethird party media repository | `FALSE` |
+| `MEDIA_REPO_URL`   | URL to Media Repository eg `http://mas`                                   |         |
+
 #### Media Proxy Options
 
 | Variable                  | Value                                                                       | Default |

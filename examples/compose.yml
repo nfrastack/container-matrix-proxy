@@ -1,6 +1,6 @@
 services:
   matrix-proxy-app:
-    image: docker.ionfrastack/matrix-proxy:latest
+    image: docker.io/nfrastack/matrix-proxy:latest
     container_name: matrix-proxy-app
     labels:
       - traefik.enable=true
@@ -16,6 +16,9 @@ services:
 
       - ENABLE_SYNAPSE_ADMIN=FALSE
       - SYNAPSE_ADMIN_ALLOWED_IPS=127.0.0.1,192.168.0.0/16
+
+      - ENABLE_PROXY_MAS=TRUE
+      - MAS_URL http://mas:80
 
       - ENABLE_PROXY_MEDIA_REPO=TRUE
       - MEDIA_REPO_URL=http://media-repo:8000
