@@ -18,7 +18,7 @@ services:
       - SYNAPSE_ADMIN_ALLOWED_IPS=127.0.0.1,192.168.0.0/16
 
       - ENABLE_PROXY_MAS=TRUE
-      - MAS_URL http://mas:80
+      - MAS_URL http://mas:8080
 
       - ENABLE_PROXY_MEDIA_REPO=TRUE
       - MEDIA_REPO_URL=http://media-repo:8000

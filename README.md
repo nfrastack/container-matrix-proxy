@@ -120,7 +120,7 @@ Below is the complete list of available options that can be used to customize yo
 | Variable           | Value                                                                     | Default |
 | ------------------ | ------------------------------------------------------------------------- | ------- |
 | `ENABLE_PROXY_MAS` | Create proxy to Matrix Authentication Servicethird party media repository | `FALSE` |
-| `MEDIA_REPO_URL`   | URL to Media Repository eg `http://mas`                                   |         |
+| `MAS_URL`          | URL to Media Repository eg `http://mas:8080`                              |         |
 
 #### Media Proxy Options
 
