@@ -7,7 +7,7 @@ source /container/base/functions/container/init
 prepare_service
 PROCESS_NAME="matrix-proxy"
 
-if [ ! -f "/container/state/restart" ] ; then
+if check_container_restarted ; then
     sanity_var HOMESERVER_URL "URL to your Matrix Homeserver"
     update_template container/data/nginx/location/00-matrix.conf    \
                                                                     HOMESERVER_URL
