@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: © 2025 Nfrastack <code@nfrastack.com>
+# SPDX-FileCopyrightText: © 2026 Nfrastack <code@nfrastack.com>
 #
 # SPDX-License-Identifier: MIT
 
@@ -21,15 +21,19 @@ COPY CHANGELOG.md /usr/src/container/CHANGELOG.md
 COPY LICENSE /usr/src/container/LICENSE
 COPY README.md /usr/src/container/README.md
 
-ENV NGINX_SITE_ENABLED=matrix-proxy \
-    NGINX_WORKER_PROCESSES=1 \
-    NGINX_ENABLE_CREATE_SAMPLE_HTML=FALSE \
+ENV \
     IMAGE_NAME="nfrastack/matrix-proxy" \
     IMAGE_REPO_URL="https://github.com/nfrastack/container-matrix-proxy/"
 
-RUN source /container/base/functions/container/build && \
+RUN echo "" && \
+    BUILD_ENV=" \
+                NGINX_SITE_ENABLED=matrix-proxy \
+                NGINX_ENABLE_CREATE_SAMPLE_HTML=FALSE \
+              "\
+              && \
+    source /container/base/functions/container/build && \
     container_build_log image && \
-    sed -i "s|{{NGINX_CLIENT_BODY_BUFFER_SIZE}}|32k|g" /etc/nginx/nginx.conf && \
+    sed -i "s|{{NGINX_CLIENT_BODY_BUFFER_SIZE}}|32k|g" /container/data/nginx/templates/server/http-client.template && \
     package update && \
     package upgrade && \
     package cleanup

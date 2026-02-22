@@ -22,7 +22,6 @@ services:
 
       - ENABLE_PROXY_MEDIA_REPO=TRUE
       - MEDIA_REPO_URL=http://media-repo:8000
-
     networks:
       - proxy
       - services

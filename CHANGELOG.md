@@ -1,8 +1,8 @@
 ## 1.2.0pre 2025-09-12 <code at nfrastack dot com>
 
    ### Changed
-      - Switch to nfrastack/container-nginx base
-      - Alpine 3.22
+      - nfrastack/container-nginx:8.x base
+      - Alpine 3.23
 
 ## 1.1.2 2025-08-16 <dave at tiredofit dot ca>
 
