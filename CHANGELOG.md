@@ -1,8 +1,9 @@
-## 1.2.0pre 2025-09-12 <code at nfrastack dot com>
+## 1.2.0 2026-02-25 <code at nfastack dot com>
 
-   ### Changed
+   ### Added
       - nfrastack/container-nginx:8.x base
       - Alpine 3.23
+
 
 ## 1.1.2 2025-08-16 <dave at tiredofit dot ca>
 
