@@ -9,7 +9,7 @@ FROM ${BASE_IMAGE}
 
 LABEL \
         org.opencontainers.image.title="Matrix Proxy" \
-        org.opencontainers.image.description="Proxy to your Matrix HomeserverAntivirus Scanner" \
+        org.opencontainers.image.description="Proxy to your Matrix Homeserver" \
         org.opencontainers.image.url="https://hub.docker.com/r/nfrastack/matrix-proxy" \
         org.opencontainers.image.documentation="https://github.com/nfrastack/container-matrix-proxy/blob/main/README.md" \
         org.opencontainers.image.source="https://github.com/nfrastack/container-matrix-proxy.git" \
