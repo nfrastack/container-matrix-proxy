@@ -9,7 +9,7 @@ PROCESS_NAME="matrix-proxy"
 
 if check_container_restarted ; then
     sanity_var HOMESERVER_URL "URL to your Matrix Homeserver"
-    update_template container/data/nginx/location/00-matrix.conf    \
+    update_template /container/data/nginx/location/matrix_proxy.conf    \
                                                                     HOMESERVER_URL
 
     case "${HOMESERVER_TYPE,,}" in
