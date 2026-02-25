@@ -17,7 +17,7 @@ if check_container_restarted ; then
             update_template /container/data/nginx/matrix-proxy/homeserver-synapse.conf \
                                                                                         HOMESERVER_URL
 
-            sed -i "s|{{HOMESERVER_TYPE}}|synapse|g" container/data/nginx/location/matrix_proxy.conf
+            sed -i "s|{{HOMESERVER_TYPE}}|synapse|g" /container/data/nginx/location/matrix_proxy.conf
 
             if var_true "${ENABLE_SYNAPSE_ADMIN}" ; then
                 print_notice "Enabling Proxy to Synapse Admin"
