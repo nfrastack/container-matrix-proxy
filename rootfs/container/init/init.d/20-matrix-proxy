@@ -21,7 +21,7 @@ if check_container_restarted ; then
 
             if var_true "${ENABLE_SYNAPSE_ADMIN}" ; then
                 print_notice "Enabling Proxy to Synapse Admin"
-                sed -i "s|#include /container/data/nginx/matrix-proxy/synapse-admin.conf;|include /container/data/nginx/matrix-proxy/synapse-admin.conf;|g" container/data/nginx/location/matrix_proxy.conf
+                sed -i "s|#include /container/data/nginx/matrix-proxy/synapse-admin.conf;|include /container/data/nginx/matrix-proxy/synapse-admin.conf;|g" /container/data/nginx/location/matrix_proxy.conf
                 sed "/deny all;/i\        allow 127.0.0.1;" /container/data/nginx/matrix-proxy/synapse-admin.conf
                     allowed_synapse_admin=$(echo "SYNAPSE_ADMIN_ALLOWED_IPS" | tr "," "\n")
                     for allowed_host in $allowed_synapse_admin; do
@@ -36,7 +36,7 @@ if check_container_restarted ; then
 
     if var_true "${ENABLE_PROXY_MAS}" ; then
         print_notice "Enabling Proxy to Matrix Authentication Service"
-        sed -i "s|#include /container/data/nginx/matrix-proxy/mas.conf;|include /container/data/nginx/matrix-proxy/mas.conf;|g" container/data/nginx/location/matrix_proxy.conf
+        sed -i "s|#include /container/data/nginx/matrix-proxy/mas.conf;|include /container/data/nginx/matrix-proxy/mas.conf;|g" /container/data/nginx/location/matrix_proxy.conf
         sanity_var MAS_URL "URL to your Media Repository"
         update_template /container/data/nginx/matrix-proxy/mas.conf \
                                                                     MAS_URL
@@ -44,7 +44,7 @@ if check_container_restarted ; then
 
     if var_true "${ENABLE_PROXY_MEDIA_REPO}" ; then
         print_notice "Enabling Proxy to media repository"
-        sed -i "s|#include /container/data/nginx/matrix-proxy/media-repo.conf;|include /container/data/nginx/matrix-proxy/media-repo.conf;|g" container/data/nginx/location/matrix_proxy.conf
+        sed -i "s|#include /container/data/nginx/matrix-proxy/media-repo.conf;|include /container/data/nginx/matrix-proxy/media-repo.conf;|g" /container/data/nginx/location/matrix_proxy.conf
         sanity_var MEDIA_REPO_URL "URL to your Media Repository"
         update_template /container/data/nginx/matrix-proxy/media-repo.conf \
                                                                             MEDIA_REPO_URL
@@ -58,7 +58,7 @@ if check_container_restarted ; then
 
     if var_true "${ENABLE_WELL_KNOWN}" ; then
         print_notice "Enabling .well-known serving"
-        sed -i "s|#include /container/data/nginx/matrix-proxy/well-known.conf;|include /container/data/nginx/matrix-proxy/well-known.conf;|g" container/data/nginx/location/matrix_proxy.conf
+        sed -i "s|#include /container/data/nginx/matrix-proxy/well-known.conf;|include /container/data/nginx/matrix-proxy/well-known.conf;|g" /container/data/nginx/location/matrix_proxy.conf
         sanity_var WELL_KNOWN_CLIENT "Client information"
         sanity_var WELL_KNOWN_SERVER "Homeserver information"
         update_template /container/data/nginx/matrix-proxy/well-known.conf \
