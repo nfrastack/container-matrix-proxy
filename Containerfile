@@ -27,8 +27,8 @@ ENV \
 
 RUN echo "" && \
     BUILD_ENV=" \
-                NGINX_SITE_ENABLED=matrix-proxy \
-                NGINX_ENABLE_CREATE_SAMPLE_HTML=FALSE \
+                NGINX_SITE_ENABLED=matrix_proxy \
+                NGINX_CREATE_SAMPLE_HTML=FALSE \
               "\
               && \
     source /container/base/functions/container/build && \
