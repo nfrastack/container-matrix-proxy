@@ -5,7 +5,7 @@
 
 source /container/base/functions/container/init
 prepare_service
-PROCESS_NAME="matrix-proxy"
+SERVICE_NAME="matrix-proxy"
 
 if check_container_restarted ; then
     sanity_var HOMESERVER_URL "URL to your Matrix Homeserver"
