@@ -33,7 +33,7 @@ RUN echo "" && \
               && \
     source /container/base/functions/container/build && \
     container_build_log image && \
-    sed -i "s|{{NGINX_CLIENT_BODY_BUFFER_SIZE}}|32k|g" /container/data/nginx/templates/server/http-client.template && \
+    sed -i "s|{{NGINX_CLIENT_BODY_BUFFER_SIZE}}|30M|g" /container/data/nginx/templates/server/http-client.template && \
     package update && \
     package upgrade && \
     package cleanup
