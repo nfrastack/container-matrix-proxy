@@ -1,3 +1,9 @@
+## 1.2.1 2026-06-09 <code at nfrastack dot com>
+
+   ### Changed
+      - Update proxy_read and proxy_send timeouts to be 300 seconds
+
+
 ## 1.2.0 2026-02-25 <code at nfastack dot com>
 
    ### Added
