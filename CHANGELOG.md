@@ -1,3 +1,11 @@
+## 1.2.2pre 2026-07-08 <code at nfrastack dot com>
+
+
+   ### Changed
+
+      - Map location blocks properly (1.2.0 bug)
+      - Alpine 3.24
+
 ## 1.2.1 2026-06-09 <code at nfrastack dot com>
 
    ### Changed
@@ -8,7 +16,7 @@
 
    ### Added
       - nfrastack/container-nginx:8.x base
-      - Alpine 3.24
+      - Alpine 3.23
 
 
 ## 1.1.2 2025-08-16 <dave at tiredofit dot ca>
