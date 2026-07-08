@@ -8,7 +8,7 @@
 
    ### Added
       - nfrastack/container-nginx:8.x base
-      - Alpine 3.23
+      - Alpine 3.24
 
 
 ## 1.1.2 2025-08-16 <dave at tiredofit dot ca>
