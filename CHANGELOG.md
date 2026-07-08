@@ -1,16 +1,14 @@
-## 1.2.2pre 2026-07-08 <code at nfrastack dot com>
-
+## 1.2.2 2026-07-08 <code at nfrastack dot com>
 
    ### Changed
-
-      - Map location blocks properly (1.2.0 bug)
+      - Fix location block mapping introduced in 1.2.0
       - Alpine 3.24
+
 
 ## 1.2.1 2026-06-09 <code at nfrastack dot com>
 
    ### Changed
       - Update proxy_read and proxy_send timeouts to be 300 seconds
-
 
 ## 1.2.0 2026-02-25 <code at nfastack dot com>
 
