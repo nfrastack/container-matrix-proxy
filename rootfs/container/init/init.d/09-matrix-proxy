@@ -23,7 +23,7 @@ if check_container_restarted ; then
                                 /container/data/nginx/location/11-homeserver-synapse.conf \
                             HOMESERVER_URL
 
-            if var_true "${ENABLE_SYNAPSE_ADMIN}" ; then
+            if var_true "${ENABLE_PROXY_SYNAPSE_ADMIN}" ; then
                 print_notice "Enabling Proxy to Synapse Admin"
                 render_template \
                                     /container/data/nginx/matrix-proxy/synapse-admin.conf \
@@ -31,7 +31,7 @@ if check_container_restarted ; then
                                 HOMESERVER_URL
 
                 sed -i "/deny all;/i\        allow 127.0.0.1;" /container/data/nginx/location/12-synapse-admin.conf
-                allowed_synapse_admin=$(echo "SYNAPSE_ADMIN_ALLOWED_IPS" | tr "," "\n")
+                allowed_synapse_admin=$(echo "${SYNAPSE_ADMIN_ALLOWED_IPS}" | tr "," "\n")
                 for allowed_host in $allowed_synapse_admin; do
                     print_notice "[synapse_admin] Allowing ${allowed_host}"
                     sed -i "/allow 127.0.0.1/a\\        allow $allowed_host;" /container/data/nginx/location/12-synapse-admin.conf
