@@ -1,3 +1,12 @@
+## 1.2.3 2026-10-19 <code at nfrastack dot com>
+
+   ### Added
+      - Add .well-known/client MAS issuer URL
+
+   ### Changed
+      - Fix admin ip parsing
+
+
 ## 1.2.2 2026-07-08 <code at nfrastack dot com>
 
    ### Changed
