@@ -132,11 +132,15 @@ Below is the complete list of available options that can be used to customize yo
 
 #### Well Known Options
 
-| Variable            | Value                                                     | Default |
-| ------------------- | --------------------------------------------------------- | ------- |
-| `ENABLE_WELL_KNOWN` | Enable serving .well-known/matrix/server and client files | `FALSE` |
-| `WELL_KNOWN_CLIENT` | Homeserver base url eg `https://matrix.example.com`       |         |
-| `WELL_KNOWN_SERVER` | Homeserver server info eg `matrix.example.com:443`        |         |
+| Variable                | Value                                                     | Default |
+| ----------------------- | --------------------------------------------------------- | ------- |
+| `ENABLE_WELL_KNOWN`     | Enable serving .well-known/matrix/server and client files | `FALSE` |
+| `WELL_KNOWN_CLIENT`     | Homeserver base url eg `https://matrix.example.com`       |         |
+| `WELL_KNOWN_SERVER`     | Homeserver server info eg `matrix.example.com:443`        |         |
+| `WELL_KNOWN_MAS_ISSUER` | Matrix Authentication Service issuer url eg               |         |
+|                         | `https://auth.matrix.example.com/`                        |         |
+
+> `WELL_KNOWN_MASS_ISSUER sets  when set, advertises `m.authentication` in `.well-known/matrix/client
 
 * * *
 

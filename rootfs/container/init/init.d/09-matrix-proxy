@@ -70,11 +70,21 @@ if check_container_restarted ; then
         print_notice "Enabling .well-known serving"
         sanity_var WELL_KNOWN_CLIENT "Client information"
         sanity_var WELL_KNOWN_SERVER "Homeserver information"
-        render_template \
-                            /container/data/nginx/matrix-proxy/well-known.conf \
-                            /container/data/nginx/location/15-well-known.conf \
-                        WELL_KNOWN_CLIENT \
-                        WELL_KNOWN_SERVER
+        if [ -n "${WELL_KNOWN_MAS_ISSUER}" ] ; then
+            print_notice "Including MAS discovery in .well-known/matrix/client"
+            render_template \
+                                /container/data/nginx/matrix-proxy/well-known-mas.conf \
+                                /container/data/nginx/location/15-well-known.conf \
+                            WELL_KNOWN_CLIENT \
+                            WELL_KNOWN_SERVER \
+                            WELL_KNOWN_MAS_ISSUER
+        else
+            render_template \
+                                /container/data/nginx/matrix-proxy/well-known.conf \
+                                /container/data/nginx/location/15-well-known.conf \
+                            WELL_KNOWN_CLIENT \
+                            WELL_KNOWN_SERVER
+        fi
     fi
 fi
 
